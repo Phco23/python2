@@ -24,14 +24,22 @@ def dict():
     for i in range(10):
         name = input("Enter name: ")
         age = int(input("Enter age: "))
-        users.append({"name": name,"age": age})
-    print(users)
-    element = input("Enter one more element: ")
-    for i in range(10):
-        some = input("Enter something: ")
-        users.append({"name": name,"age": age, element: some})
+        users.append({"name": name, "age": age})
+    
     print(users)
     
+    element = input("Enter the key for the new element: ")
+    length = len(users)
+    
+    for i in range(length):
+        some = input(f"Enter value for element: ")
+        users[i].update({element: some}) 
+    
+    print(users)    
+
+    sort = sorted(users, key=lambda x:x['age'], reverse=True) 
+    
+    print(sort)
 
 
 if __name__ == "__main__":
